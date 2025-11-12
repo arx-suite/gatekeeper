@@ -1,0 +1,4 @@
+[package]
+name = "arx-gatekeeper-derive"
+version.workspace = true
+edition.workspace = true

@@ -1,0 +1,10 @@
+[workspace]
+resolver = "2"
+members = ["gatekeeper", "gatekeeper-derive"]
+
+[workspace.package]
+rust-version = "1.90.0"
+version = "0.1.0"
+edition = "2024"
+
+[workspace.dependencies]
