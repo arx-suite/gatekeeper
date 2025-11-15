@@ -3,3 +3,48 @@ name = "arx-gatekeeper"
 version.workspace = true
 edition.workspace = true
 license.workspace = true
+authors.workspace = true
+description = "Arx-Gatekeeper is a Rust data validation and transformation library, providing derive macros, rich error reporting, and support for no_std."
+homepage = "https://github.com/arx-suite/gatekeeper#readme"
+repository = "https://github.com/arx-suite/gatekeeper"
+documentation = "https://github.com/arx-suite/gatekeeper#readme"
+keywords = ["validation", "derive", "no_std", "data-transformation", "gatekeeper"]
+
+
+[dependencies]
+# internal
+arx-gatekeeper-derive = { workspace = true, optional = true }
+
+
+[features]
+default = ["std"]
+
+# Enables standard library support. Required for normal Rust usage with Box, Vec, String, etc
+std = []
+# Enables heap allocation in no_std environments. Provides Vec, String, Box without std
+alloc = []
+
+# Smart pointers support
+# Enables implementations of Validate for Rc<T> and Arc<T>.
+# Note: Serializing or transforming these types does not preserve pointer identity
+#   and may result in multiple copies of the same data. Enable only if needed
+rc = []
+
+# Derive macros
+# Enables the procedural macro derive(Validate). Provides ergonomic automatic validation 
+derive = ["dep:arx-gatekeeper-derive"]
+
+# Enables regex-based validators. Required for pattern-matching validation such as email or custom formats
+regex = []
+# Enables validators for UUID types (Uuid crate). Useful for fields requiring UUID validation
+uuid = []
+# Enables validators for date and time types. Works with time-related crates for date/time validation
+time = []
+# Enables built-in email validation. Depends on regex feature. Provides standard RFC-compliant email checking
+email = ["regex"]
+# Enables schema-driven validation. Allows fields to be validated according to external schema definitions
+schema = []
+
+# Enables unstable or experimental validators and transformations. May include breaking changes
+# and is intended for development/testing purposes
+experimental = []

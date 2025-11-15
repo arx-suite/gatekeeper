@@ -7,5 +7,8 @@ rust-version = "1.90.0"
 version = "0.1.0"
 edition = "2024"
 license = "MIT"
+authors = ["sajeevan"]
 
 [workspace.dependencies]
+arx-gatekeeper-derive = { path = "./gatekeeper-derive" }
+arx-gatekeeper = { path = "./gatekeeper" }

@@ -2,3 +2,19 @@
 name = "arx-gatekeeper-derive"
 version.workspace = true
 edition.workspace = true
+license.workspace = true
+authors.workspace = true
+description = "Procedural derive macros for the Gatekeeper validation library"
+keywords = ["validation", "derive", "proc-macro", "gatekeeper"]
+
+
+[lib]
+proc-macro = true
+
+[features]
+default = []
+
+[dependencies]
+syn = { version = "2", features = ["full"] }
+quote = { version = "1" }
+proc-macro2 = { version = "1" }
