@@ -8,12 +8,20 @@ description = "Arx-Gatekeeper is a Rust data validation and transformation libra
 homepage = "https://github.com/arx-suite/gatekeeper#readme"
 repository = "https://github.com/arx-suite/gatekeeper"
 documentation = "https://github.com/arx-suite/gatekeeper#readme"
-keywords = ["validation", "derive", "no_std", "data-transformation", "gatekeeper"]
+keywords = [
+    "validation",
+    "no_std",
+    "data-transformation",
+    "gatekeeper",
+]
 
 
 [dependencies]
 # internal
 arx-gatekeeper-derive = { workspace = true, optional = true }
+
+compact_str = { version = "0.9.0", default-features = false }
+smallvec = { version = "1.15.1", default-features = false }
 
 
 [features]
