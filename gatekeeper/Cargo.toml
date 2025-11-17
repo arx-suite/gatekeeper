@@ -32,6 +32,14 @@ std = []
 # Enables heap allocation in no_std environments. Provides Vec, String, Box without std
 alloc = []
 
+# Enable this only if you want functions that modify incoming values into a
+# safer representation, rather than rejecting them with validation errors.
+sanitize = []
+
+# Use this feature when you need controlled modifications that convert one
+# representation of data into another while keeping the semantics intact.
+transform = []
+
 # Smart pointers support
 # Enables implementations of Validate for Rc<T> and Arc<T>.
 # Note: Serializing or transforming these types does not preserve pointer identity
